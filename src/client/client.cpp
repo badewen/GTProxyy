@@ -141,7 +141,7 @@ void Client::on_receive(ENetPeer* peer, ENetPacket* packet)
         packet::core::ServerHello server_hello{};
         packet::PacketHelper::send(server_hello, *to_player);
     }
-    else if (type == packet::NET_MESSAGE_GENERIC_TEXT || type == packet::NET_MESSAGE_GAME_MESSAGE) {
+    else if (type == packet::NET_MESSAGE_GENERIC_TEXT || type == packet::NET_MESSAGE_GAME_MESSAGE || type == packet::NET_MESSAGE_TRACK) {
         std::string message{};
         byte_stream.read(message, byte_stream.get_size() - sizeof(packet::NetMessageType) - 1);
 

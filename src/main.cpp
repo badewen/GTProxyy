@@ -4,7 +4,7 @@
 #include "extension/parser/parser_impl.hpp"
 #include "extension/sub_server_switch/sub_server_switch_impl.hpp"
 #include "extension/web_server/web_server_impl.hpp"
-#include "extension/command_handler/command_handler_impl.hpp"
+#include "extension/world_dumper/world_dumper_impl.hpp"
 
 int main()
 {
@@ -49,7 +49,7 @@ int main()
         core.add_extension(new extension::web_server::WebServerExtension{ &core });
         core.add_extension(new extension::parser::ParserExtension{ &core });
         core.add_extension(new extension::sub_server_switch::SubServerSwitchExtension{ &core });
-        core.add_extension(new extension::command_handler::CommandHandlerExtension{ &core });
+        core.add_extension(new extension::world_dumper::WorldDumperExtension{ &core });
 
         // Run the core (Will block the main thread until the core is stopped)
         core.run();

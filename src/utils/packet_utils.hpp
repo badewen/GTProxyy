@@ -7,7 +7,7 @@
 namespace utils {
 class PacketUtils {
 public:
-    static void send_chat_message(player::Player* player, const std::string& message) {
+    static void send_chat_message(const player::Player* player, const std::string& message) {
         if (!player || !player->is_connected()) {
             spdlog::error("Cannot send message: player is null or not connected.");
             return;

@@ -91,42 +91,50 @@ enum PacketFlag : uint32_t {
 #pragma pack(push, 1)
 struct GameUpdatePacket {
     PacketType type;
-    uint8_t pad[3];
+    uint8_t int1;
+    uint8_t int2;
+    uint8_t int3;
     uint32_t net_id;
-    uint8_t pad_2[4];
+    uint32_t int4;
 
     union {
         PacketFlag value;
         struct {
-            uint32_t none : 1;
-            uint32_t unk : 1;
-            uint32_t reset_visual_state : 1;
-            uint32_t extended : 1;
-            uint32_t rotate_left : 1;
-            uint32_t on_solid : 1;
-            uint32_t on_fire_damage : 1;
-            uint32_t on_jump : 1;
-            uint32_t on_killed : 1;
-            uint32_t on_punched : 1;
-            uint32_t on_placed : 1;
-            uint32_t on_tile_action : 1;
-            uint32_t on_got_punched : 1;
-            uint32_t on_respawned : 1;
-            uint32_t on_collect_object : 1;
-            uint32_t on_trampoline : 1;
-            uint32_t on_damage : 1;
-            uint32_t on_slide : 1;
-            uint32_t pad_1 : 3;
-            uint32_t on_wall_hang : 1;
-            uint32_t pad_2 : 3;
-            uint32_t on_acid_damage : 1;
-            uint32_t pad_3 : 6;
+            uint32_t none: 1;
+            uint32_t flying: 1;
+            uint32_t reset_visual_state: 1;
+            uint32_t extended: 1;
+            uint32_t rotate_left: 1;
+            uint32_t on_solid: 1;
+            uint32_t on_fire_damage: 1;
+            uint32_t on_jump: 1;
+            uint32_t on_killed: 1;
+            uint32_t on_punched: 1;
+            uint32_t on_placed: 1;
+            uint32_t on_tile_action: 1;
+            uint32_t on_got_punched: 1;
+            uint32_t on_respawned: 1;
+            uint32_t on_collect_object: 1;
+            uint32_t on_trampoline: 1;
+            uint32_t on_damage: 1;
+            uint32_t on_slide: 1;
+            uint32_t jump_peak: 1;
+            uint32_t falling_slowly: 1;
+            uint32_t swim_sound: 1;
+            uint32_t on_wall_hang: 1;
+            uint32_t rayman_start: 1;
+            uint32_t rayman_end: 1;
+            uint32_t rayman_load: 1;
+            uint32_t force_ring: 1;
+            uint32_t acid_damage: 1;
+            uint32_t pad_3: 5;
         };
     } flags;
 
-    uint8_t pad_3[4];
-    uint32_t decompressed_data_size;
-    uint8_t pad_4[28];
+    float float1;
+    uint32_t value;
+    float vec_x, vec_y, vec_x2, vec_y2, float2;
+    uint32_t int_x, int_y;
     uint32_t data_size;
 };
 #pragma pack(pop)
