@@ -124,10 +124,10 @@ void Client::on_receive(ENetPeer* peer, ENetPacket* packet)
     }
 
     ByteStream byte_stream{ reinterpret_cast<std::byte*>(packet->data), packet->dataLength };
-    if (byte_stream.get_size() < 4 || byte_stream.get_size() > 786432 /* 768kb */) {
-        player_->disconnect();
-        return;
-    }
+    // if (byte_stream.get_size() < 4 || byte_stream.get_size() > 786432 /* 768kb */) {
+    //     player_->disconnect();
+    //     return;
+    // }
 
     enet_packet_destroy(packet);
 

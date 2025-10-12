@@ -13,7 +13,7 @@ static const std::map<std::string, ConfigStorage> config_defaults{
     { "client.dnsServer", "cloudflare" },
     { "extension.ignore", std::vector<std::string>{ "0xdeadbeef" } },
     { "log.printMessage", true },
-    { "log.printGameUpdatePacket", false },
+    { "log.printGameUpdatePacket", true },
     { "log.printVariant", true },
 };
 

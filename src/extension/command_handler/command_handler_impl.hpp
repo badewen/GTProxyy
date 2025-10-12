@@ -26,7 +26,7 @@ public:
                 TextParse textParse(event.get_message().get_raw(), "|");
                 
                 std::string command = textParse.get("text");
-                
+
                 if (command == "/proxy") {
                 
                     player::Player* to_player = core_->get_server()->get_player();

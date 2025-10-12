@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\projects\GTProxyy\CMakeFiles\7a4741635512f85bdba7d1e9de9cb763\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{39C1D617-C2AF-3997-AEC6-33B2DCF67CC6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

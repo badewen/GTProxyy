@@ -28,13 +28,13 @@ add_executable(${PROJECT_NAME}
     ${GTPROXY_SOURCE_FILES})
 
 # Try to find the required packages
-find_package(fmt REQUIRED)
-find_package(glm REQUIRED)
-# find_package(httplib REQUIRED)
-find_package(magic_enum REQUIRED)
-find_package(nlohmann_json REQUIRED)
-find_package(pcg-cpp REQUIRED)
-find_package(spdlog REQUIRED)
+# find_package(fmt REQUIRED)
+# find_package(glm REQUIRED)
+# # find_package(httplib REQUIRED)
+# find_package(magic_enum REQUIRED)
+# find_package(nlohmann_json REQUIRED)
+# find_package(pcg-cpp REQUIRED)
+# find_package(spdlog REQUIRED)
 
 # Target the required packages
 target_link_libraries(${PROJECT_NAME}
@@ -45,14 +45,18 @@ target_link_libraries(${PROJECT_NAME}
     fmt::fmt
     glm::glm
     httplib::httplib
-    magic_enum::magic_enum
-    nlohmann_json::nlohmann_json
-    pcg-cpp::pcg-cpp
-    spdlog::spdlog)
-
+    # magic_enum::magic_enum
+    # nlohmann_json::nlohmann_json
+    # pcg-cpp::pcg-cpp
+    # spdlog::spdlog)
+)
 # ?????????
 target_include_directories(${PROJECT_NAME} PRIVATE
-    ${CMAKE_SOURCE_DIR}/lib/libressl/include)
+    ${CMAKE_SOURCE_DIR}/lib/libressl/include
+    ${CMAKE_SOURCE_DIR}/lib/pcg-cpp/include
+    ${CMAKE_SOURCE_DIR}/lib/spdlog/include
+    ${CMAKE_SOURCE_DIR}/lib/magic_enum/include
+    ${CMAKE_SOURCE_DIR}/lib/nlohmann_json/include)
 
 if (MSVC)
     target_compile_options(${PROJECT_NAME} PRIVATE 
